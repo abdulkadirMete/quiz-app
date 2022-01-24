@@ -1,4 +1,4 @@
-
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@300&display=swap');
 
 :root {
   /* dark shades of primary color*/
@@ -41,21 +41,233 @@
   --fixed-width: 620px;
 }
 
-
-
-
-
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Karla', sans-serif;
+}
 
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--clr-primary-10);
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+.main {
+  width: 90vw;
+  height: 100vh;
+  display: flex;
+  margin: 0 auto;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Home */
+
+.quiz-container {
+  background-color: white;
+  min-width: 300px;
+  width: 500px;
+  padding: 3rem;
+  border-radius: 5px;
+  box-shadow: 0 0 4px rgb(221, 218, 218);
+}
+
+.setup-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.setup-form h2 {
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 2rem;
+}
+
+.form-control {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+
+.form-control label {
+  margin-bottom: 0.25rem;
+  text-transform: capitalize;
+  color: var(--clr-primary-1);
+}
+
+.form-control input,
+select {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--clr-grey-10);
+  font-size: 1rem;
+  border-radius: 4px;
+  border: none;
+}
+
+.btn {
+  background-color: #ffb100;
+  border: none;
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  border-radius: var(--radius);
+  text-transform: capitalize;
+  cursor: pointer;
+  letter-spacing: 0.15rem;
+}
+
+.btn:hover {
+  background-color: #c08a0c;
+  color: white;
+}
+
+.setup-form a {
+  margin-right: auto;
+}
+
+.error {
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+  color: var(--clr-red-light);
+}
+
+/* Questions */
+
+.question-container {
+  min-width: 500px;
+  width: 80vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  padding: 3rem;
+  margin: 4rem auto;
+}
+
+.correct-answers {
+  margin-bottom: 2rem;
+  font-size: 1.2em;
+  text-transform: capitalize;
+  color: var(--clr-green-light);
+  margin-left: auto;
+}
+
+.container h2 {
+  margin-bottom: 2rem;
+  font-size: 2.5em;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+  line-height: 1.5;
+  text-align: center;
+}
+
+.answer-btn {
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: var(--clr-primary-7);
+  border: none;
+  font-size: 1em;
+  opacity: 0.9;
+  border-radius: var(--radius);
+}
+
+.answer-btn:hover {
+  background-color: var(--clr-primary-4);
+  color: white;
+}
+
+.question-container {
+  margin: 0.5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn-container {
+  display: flex;
+  flex-direction: column;
+  width: 60%;
+}
+
+.next-question {
+  min-width: 20%;
+  margin-left: auto;
+  margin-top: 2rem;
+}
+
+/* Modal */
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: rgba(34, 34, 34, 0.685);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+  max-width: 620px;
+  position: fixed;
+  background-color: #fff;
+  border-radius: var(--radius);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  padding: 2rem 4rem;
+}
+
+.modal h2 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+  font-size: 2.5em;
+  color: var(--clr-black);
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
+.modal p {
+  margin-bottom: 1rem;
+  font-size: 1.2em;
+  letter-spacing: 1px;
+  color: var(--clr-black);
+  opacity: 0.9;
+}
+
+.close-btn {
+  margin-top: 1rem;
+}
+
+
+/* Loading Animation */
+
+@keyframes spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading {
+  width: 6rem;
+  height: 6rem;
+  margin: 0 auto;
+  margin-top: 10rem;
+  border-radius: 50%;
+  border: 3px solid #ccc;
+  border-top-color: var(--clr-primary-5);
+  animation: spinner 0.6s linear infinite;
+}
+
